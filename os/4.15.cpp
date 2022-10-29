@@ -8,7 +8,6 @@
 #define MIN_PID 300
 #define MAX_PID 5000
 
-//pthread_mutex_t mutex;
 int threadVar = 0;
 
 
@@ -46,13 +45,8 @@ void release_pid(int pid){
     p[pid - MIN_PID].i = 1;
 }
 
-void *threadCall(void* args)                         
+void *Thread(void* args)                         
 {
-    if (args==NULL)
-    {
-        printf("NULL\n");//fail to create
-    }
-    
     int ret = allocate_pid();       
     printf("%d %d\n",threadVar++, ret);
     sleep(rand());
@@ -71,7 +65,7 @@ int main(int argc, char const *argv[])
     #pragma omp parallel for
     for (int i = 0; i < 100; i++)
     {
-        pthread_create(&thread[i],NULL,&threadCall,NULL);
+        pthread_create(&thread[i],NULL,&Thread,NULL);
     }
     
     return 0;

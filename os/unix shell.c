@@ -37,6 +37,7 @@ int main(void)
         //
         gets(input);
 
+        //!!
         if (input[0]=='!')
         {
             if (input[1]=='!')
@@ -106,7 +107,7 @@ int main(void)
             //history
             if (strcmp(args[0],"history")==0)
             {
-                q.rear--;
+                //q.rear--;
                 for (int j = q.rear-1; j >= q.front; j--)
                 {
                     printf("%d %s\n",j-q.front+1,q.history[j]);
