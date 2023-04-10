@@ -8,14 +8,15 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program":  "${fileDirname}/a.out",//修改为.out
+            "program": "${fileDirname}/a.out", //修改为.out
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "preLaunchTask": "build",//均为build
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "build", //均为build
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -26,4 +27,3 @@
         }
     ]
 }
-
